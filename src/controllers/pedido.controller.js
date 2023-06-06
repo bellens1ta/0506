@@ -1,7 +1,8 @@
 const pedidos = require('../../data/pedidos.json')
 const alumnos = require('../../data/alumnos.json')
 const viandas = require('../../data/viandas.json');
-const { getViandaByCode } = require('./vianda.controller');
+
+
 const httpStatusCodes = require('http2').constants;
 let id = 1;//para generar id
 

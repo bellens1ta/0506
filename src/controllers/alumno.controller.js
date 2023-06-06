@@ -48,7 +48,7 @@ const getAlmunosByDni =  (req, res) => {
          res.status(httpStatusCodes.HTTP_STATUS_NOT_FOUND).json({ error: 'El DNI debe tener 8 numeros' });
          return
       }
-      if (edad <= 18 || edad >= 99) {
+      if (edad <= 18 && edad >= 99) {
         res.status(httpStatusCodes.HTTP_STATUS_NOT_FOUND).json({ error: 'La edad del alumno tiene que ser mayor a 18 y menor a 99', edad });
         return
     }

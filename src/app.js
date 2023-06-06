@@ -1,15 +1,19 @@
-/*const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const express = require('express')
+const alumnosRouter = require('./routes/alumno.route')
+const viandasRouter = require('./routes/vianda.route')
+const PORT = process.env.PORT || 3001
+const app = express()
 
-const vehiculosRoutes  = require('./routes/vehiculosRoutes');
-const { reservasRoutes } = require('./routes/reservasRoutes');
+app.use(express.json())
+app.use('/api/alumnos', alumnosRouter)
+app.use('/api/viandas', viandasRouter)
 
-app.use(express.json());
+app.listen(PORT, () => {
+    console.log(`Solución del parcial en el puerto ${PORT}`)
+})
 
-app.use("/api/vehiculos", vehiculosRoutes);
-app.use("/api/reservas", reservasRoutes);
-*/
-//app.listen(PORT, () => {
-  console.log(`App lista escuchando en el puerto `);
-//});
+
+
+
+
+
